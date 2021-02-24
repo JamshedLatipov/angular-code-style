@@ -1,25 +1,49 @@
 {
   "extends": "tslint:recommended",
-  "rulesDirectory": [
-    "codelyzer"
-  ],
+  "rulesDirectory": ["codelyzer"],
   "rules": {
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
       "severity": "warn"
     },
-    "import-blacklist": [
-      true,
-      "rxjs/Rx"
-    ],
+    "import-blacklist": [true, "rxjs/Rx"],
     "interface-name": false,
     "max-classes-per-file": false,
-    "max-line-length": [
+    "max-line-length": [true, 140],
+    "typedef": [
       true,
-      140
+      "parameter",
+      "property-declaration",
+      "member-variable-declaration",
+      "call-signature"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
     ],
     "member-access": false,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-pascal-case",
+        "allow-leading-underscore"
+      ]
+    },
+    "whitespace": {
+      "options": [
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-separator",
+        "check-type",
+        "check-typecast"
+      ]
+    },
     "member-ordering": [
       true,
       {
@@ -32,35 +56,37 @@
       }
     ],
     "no-consecutive-blank-lines": false,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
     "no-empty": false,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-inferrable-types": [true, "ignore-params"],
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
     "no-use-before-declare": true,
     "no-var-requires": false,
-    "object-literal-key-quotes": [
-      true,
-      "as-needed"
-    ],
+    "object-literal-key-quotes": [true, "as-needed"],
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
-    "quotemark": [
+    "ordered-imports": [
       true,
-      "single"
+      {
+        "import-sources-order": "any",
+        "named-imports-order": "any",
+        "grouped-imports": true,
+        "groups": [
+          {"match": "^@angular", "order": 1},
+          {"match": "^@(?!ngrx|map|angular)", "order": 2},
+          {"match": "^@ngrx", "order": 3},
+          {"match": "^rxjs", "order": 4},
+          {"match": "^\\w", "order": 5},
+          {"name": "n-4", "match": "^[.][.]/[.][.]/[.][.]/[.][.]/", "order": 6},
+          {"name": "n-3", "match": "^[.][.]/[.][.]/[.][.]/", "order": 7},
+          {"name": "n-2", "match": "^[.][.]/[.][.]/", "order": 8},
+          {"name": "n-1", "match": "^[.][.]/", "order": 9},
+          {"name": "n0", "match": "^[.]/", "order": 10}
+        ]
+      }
     ],
-    "trailing-comma": false,
+    "quotemark": [true, "single"],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
