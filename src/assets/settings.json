@@ -1,0 +1,10 @@
+{
+  "backendURL": "http://172.26.10.38:8080/usermngmnt-api",
+  "sentryDSN": "http://asdasd@172.26.10.54:9000/2",
+  "sentryAllowedHosts": ["localhost", "192.168.137.90", "172.26.10.54"],
+  "microServices": {
+    "map": "http://localhost:4201/",
+    "userManagement": "http://localhost:4202/",
+    "admin": "http://localhost:4203/"
+  }
+}

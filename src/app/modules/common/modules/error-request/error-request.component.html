@@ -1,0 +1,7 @@
+<div class="list">
+  <div class="list__title">Ошибочные запросы</div>
+  <div class="list__item" *ngFor="let row of data | keyvalue">
+    <div class="list__item--url">{{ row.key }}</div>
+    <b class="list__item--value">{{ row.value }}</b>
+  </div>
+</div>
